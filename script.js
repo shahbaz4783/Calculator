@@ -12,12 +12,16 @@ buttons.forEach((item) => {
             display.innerText = eval(display.innerText);
         } else if (display.innerText == '' && item.id == 'equal'){
             display.innerText = 'Empty!';
-            setTimeout(() => (display.innerText = ''), 2000);
+            setTimeout(() => (display.innerText = ''), 2000); 
+        } else if (item.id == '%') {
+            display.innerText += '/100';
         } else{
             display.innerText += item.id; 
         }
     }
 })
+
+
 
 const themeToggleBtn = document.querySelector('.theme-toggler');
 const calculator = document.querySelector('.calculator');
