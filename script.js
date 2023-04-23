@@ -13,12 +13,7 @@ buttons.forEach((item) => {
         } else if (display.innerText == '' && item.id == 'equal'){
             display.innerText = 'Empty!';
             setTimeout(() => (display.innerText = ''), 2000);
-        } else if (item.id == "%") {
-          let string = display.innerText.toString();
-          let operatorIndex = string.lastIndexOf("+") || string.lastIndexOf("-") || string.lastIndexOf("*") || string.lastIndexOf("/");
-          if (operatorIndex == -1) {
-          display.innerText = "Invalid Input";
-        } else{
+        } else {
           display.innerText += item.id; 
         }
     }
