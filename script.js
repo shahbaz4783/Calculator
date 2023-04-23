@@ -12,14 +12,22 @@ buttons.forEach((item) => {
             display.innerText = eval(display.innerText);
         } else if (display.innerText == '' && item.id == 'equal'){
             display.innerText = 'Empty!';
-            setTimeout(() => (display.innerText = ''), 2000); 
-        } else if (item.id == '%') {
-            display.innerText += '/100';
+            setTimeout(() => (display.innerText = ''), 2000);
+        } else if (item.id == '%'){
+            let string = display.innerText.toString();
+            let lastChar = string.charAt(string.length - 1);
+            if (isNaN(lastChar)){
+                display.innerText = "Invalid input!";
+                setTimeout(() => (display.innerText = ''), 2000);
+            } else {
+                display.innerText = eval(string) / 100;
+            }
         } else{
             display.innerText += item.id; 
         }
     }
-})
+});
+
 
 
 
